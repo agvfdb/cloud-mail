@@ -351,6 +351,7 @@
               </div>
             </div>
           </div>
+        </div> <!-- 修复1：关闭 card-grid -->
 
       <!-- Dialogs remain the same -->
       <el-dialog v-model="editTitleShow" :title="$t('changeTitle')" width="340" @closed="editTitle = setting.title">
@@ -674,6 +675,7 @@
         </div>
         <el-button type="primary" style="width: 100%;" :loading="settingLoading" @click="saveEmailPrefix">{{ $t('save') }}</el-button>
       </el-dialog>
+      </div> <!-- 修复2：关闭 scroll-body -->
     </el-scrollbar>
   </div>
 </template>
@@ -1582,29 +1584,6 @@ function editSetting(settingForm, refreshStatus = true) {
   .el-button {
     width: 48px;
     margin: 0 0 0 10px;
-  }
-}
-
-.forward-set-body {
-  display: flex;
-  flex-direction: column;
-
-  .el-switch {
-    align-self: end;
-  }
-
-  > *:nth-child(-n+2) {
-    margin-bottom: 15px;
-  }
-
-  .tg-msg-label {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .el-select {
-      width: v-bind(tgMsgLabelWidth);
-    }
   }
 }
 
